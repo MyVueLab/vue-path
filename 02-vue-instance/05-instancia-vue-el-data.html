@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        {{ titulo }}
+        <button @click="alterar">Alterar</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Teste'
+            },
+            methods: {
+                alterar() {
+                    this.titulo += '!';
+                }
+            }
+        });
+
+        // VM é a instancia VueJS, onde ficam todo o core
+        // do widget, componente ou aplicação
+        console.log(vm);
+
+        // vm.$el é onde fica armazenado a referencia de DOM,
+        // passado no instanciamento do objeto Vue
+        console.log(vm.$el);
+
+        // conteúdo original do Data onde o Vue realmente
+        // guarda todos os valores, pois ele realiza o get e o set
+        // em alto nível, diretamente na raiz da instancia
+        // direto do this, ex: this.titulo, mas na verdade titulo
+        // esta dentro de this.$data.titulo
+        console.log(vm.$data)
+    </script>
+</body>
+
+</html>

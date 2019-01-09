@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <comp></comp>
+    </div>
+
+    <script>
+
+        Vue.component('comp', {
+            /*
+                O template informa a estrutura do component,
+                é obrigatório haver um elemento raiz
+             */
+            template: `
+                <div>
+                    <h1>{{ aula }}</h1>
+                    <h2>{{ modulo }}</h2>
+                    <button @click="alterarAula">
+                        Alterar Aula
+                    </button>
+                    <button @click="alterarModulo">
+                        Alterar Módulo
+                    </button>
+                </div>
+            `,
+
+            /*
+                Dentro de um component é necessário que
+                o data seja uma função retornando o estado
+                (objeto com  suas propriedades)
+             */
+            data() {
+                return {
+                    aula: 'Aula: Vue Component',
+                    modulo: 'Modulo: Instância Vue'
+                }
+            },
+            methods: {
+                alterarAula(){
+                    this.aula += '#';
+                },
+                alterarModulo(){
+                    this.modulo += '#';
+                },
+            }
+        })
+
+        /*
+            Após os componentes serem registrados ainda
+            é necessário montar a instancia do Vue para
+            a aplicação funcionar e ser renderizada na tela.
+         */
+        const vm = new Vue({
+            el: "#app"
+        });
+
+    </script>
+</body>
+
+</html>

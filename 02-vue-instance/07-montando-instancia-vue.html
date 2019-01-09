@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script>
+        /*
+            Podemos utilizar um template para renderizar
+            na página, mas ela deve conter um elemento raiz.
+            Conseguimos montar nossa instância com vm.$mount()
+            e podemos passar o element local a ser renderizado
+            no nosso caso é o #app, então, vm.$mount('#app').
+            Caso não passemos nenhum elemento alvo para exibir na tela
+            o template informado é rendezido sem erro algum, só
+            precisamos inserir o elemento na tela, no exemplo
+            utilizamos javascript publico para exibir, ex:
+
+            document.querySelector('#app').appendChild(vm.$el)
+        */
+
+        const vm = new Vue({
+            template: `
+                <div>
+                    <h1>{{ aula }}</h1>
+                    <h2>{{ modulo }}</h2>
+                    <button @click="alterarAula">Alterar Aula</button>
+                    <button @click="alterarModulo">Alterar Módulo</button>
+                </div>
+            `,
+            data: {
+                aula: 'Aula: Montando Instância Vue',
+                modulo: 'Módulo: Instância Vue',
+            },
+            methods: {
+                alterarAula() {
+                    this.aula += '#'
+                },
+                alterarModulo() {
+                    this.modulo += '#'
+                },
+            }
+        });
+
+        vm.$mount();
+        document.querySelector('#app').appendChild(vm.$el)
+
+    </script>
+</body>
+
+</html>

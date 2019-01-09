@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1 ref="aulaRef">{{ aula }}</h1>
+        <h2>{{ modulo }}</h2>
+        <button @click="alterarAula">Alterar Aula</button>
+        <button @click="alterarModulo">Alterar Módulo</button>
+    </div>
+
+    <script>
+        /*
+            this.$refs é onde o vue armazeza as referencias de DOM
+            informadas pelo data atributo ´ref´, dentro de ref podemos
+            informar um alias para idenfitificar o elemento, ex:
+            < h1 ref="title">Aula: Usando Refs</h1>
+
+            this.$refs.title === <h1>...</h1>
+         */
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                aula: 'Aula: Usando Refs',
+                modulo: 'Módulo: Instância Vue',
+            },
+            methods: {
+                alterarAula() {
+                    this.aula += '#'
+                },
+                alterarModulo() {
+                    this.modulo += '#',
+                    console.log(this.$refs.aulaRef.innerHTML);
+
+                },
+            }
+        });
+
+        console.log(vm.$refs.aulaRef.innerHTML);
+
+    </script>
+</body>
+
+</html>
