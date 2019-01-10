@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+    <div id="desafio">
+        
+        <!-- 
+            exibir em resultado : valor !== 37 ? 'Valor Diferente' : 'Valor Igual' 
+        -->
+
+        <!-- 
+            Observar mudanças em resultado e reiniciar o 'valor' para '0' 
+            depois de 5 segundos
+        -->
+
+        <div>
+            <p>Valor atual: {{ valor }}</p>
+            <button @click="valor += 5">Somar 5</button>
+            <button @click="valor += 1">Somar 1</button>
+            <p>{{ resultado }}</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
