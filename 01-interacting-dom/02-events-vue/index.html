@@ -9,16 +9,25 @@
 </head>
 <body>
     <div id="desafio">
-        
+
+        <!-- Exibe um alerta ao clicar no botão -->
         <div>
             <button v-on:click="exibirAlerta">Exibir Alerta</button>
         </div>
 
+        <!--
+            Printa o valor do input dentro da tag p
+            apenas no evento keydown
+        -->
         <div>
             <input type="text" v-on:keydown="printValue">
             <p>{{ valor }}</p>
         </div>
 
+        <!--
+            Printa o valor do input após e somente pressionar
+            a tecla "enter"
+        -->
         <div>
             <input type="text" v-on:keydown.enter="printValue">
             <p>{{ valor }}</p>

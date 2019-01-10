@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+        <COUNTER></COUNTER>
+        <Counter></Counter>
+        <counteR></counteR>
+    </div>
+
+
+
+    <script>
+        /*
+            Global Component Register
+        */
+        Vue.component('counter', {
+            template: `
+                <div>
+                    <span>{{ counter }}</span>
+                    <button @click="counter++">+</button>
+                    <button @click="counter--">-</button>
+                </div>
+            `,
+            data() {
+                return {
+                    counter: 0
+                }
+            }
+        })
+
+        new Vue ({
+            el: '#app',
+        });
+    </script>
+</body>
+</html>

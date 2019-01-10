@@ -10,6 +10,11 @@ new Vue({
             return this.valor !== 37 ? 'Valor Diferente' : 'Valor Igual';
         }
     },
+    /*
+        Só dispara quando há uma mudança de valor
+        na propriedade informada seja do data ou do
+        computed
+    */
     watch: {
         resultado(novo, antigo) {
             setTimeout(() => {

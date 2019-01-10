@@ -9,22 +9,22 @@ new Vue({
         styleProgressCSS: {
             height: '20px',
             width: '0px',
-            background: 'blue', 
+            background: 'blue',
         },
-        hide: ''
+        hide: false
     },
     methods: {
         iniciarEfeito() {
             setInterval(() => {
-                this.destaque = !this.destaque;    
-                this.encolher = !this.encolher;    
+                this.destaque = !this.destaque;
+                this.encolher = !this.encolher;
             }, 200);
         },
         startProgress() {
             let valor = 0;
 
             let clear = setInterval(() => {
-                
+
                 valor += 10;
 
                 this.styleProgressCSS.width = `${valor}px`;
