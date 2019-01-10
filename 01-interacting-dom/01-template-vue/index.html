@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+    <div id="desafio">
+        <p>Usando VueJS - {{ name }} ({{ age }})</p>
+
+        <p>{{ age * 3 }}</p>
+
+        <p>{{ getRandom() }}</p>
+
+        <div>
+            <img v-bind:src="imageUrl" height="400">
+        </div>
+
+        <div>
+            <input type="text" v-bind:value="name">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
