@@ -10,11 +10,15 @@
 </template>
 
 <script>
+import EventBus from '@/EventBus.js';
 export default {
     data() {
         return {
             usuario: null
         }
+    },
+    created() {
+        EventBus.$on('userSelected', user => this.usuario = user)
     }
 }
 </script>
